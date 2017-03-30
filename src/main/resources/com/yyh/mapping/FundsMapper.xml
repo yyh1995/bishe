@@ -93,6 +93,9 @@
     from funds
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="getAllFunds" resultType="com.yyh.pojo.Funds">
+    select * from funds order by id
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from funds
     where id = #{id,jdbcType=INTEGER}

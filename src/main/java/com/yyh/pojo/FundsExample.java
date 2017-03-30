@@ -5,9 +5,6 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-
-
-//mybatis的逆向工程中会生成实例及实例对应的example，example用于添加条件，相当where后面的部分
 public class FundsExample {
     protected String orderByClause;
 
@@ -696,9 +693,6 @@ public class FundsExample {
         }
     }
 
-
-
-    //静态内部类Criteria，Criteria中的方法是定义SQL 语句where后的查询条件
     public static class Criteria extends GeneratedCriteria {
 
         protected Criteria() {

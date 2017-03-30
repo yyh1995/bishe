@@ -1,12 +1,16 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" import="java.util.*"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <html>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-
+    <base href="<%=basePath%>">
     <title>基金网站</title>
 
     <!--CSS -->
@@ -148,16 +152,16 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${fundses}" var="funds">
+        <c:forEach var="funds" items="${fundsList}">
         <tr>
-            <td>${funds.fName}</td>
-            <td>${funds.fCode}</td>
-            <td>${funds.fNetdate}</td>
-            <td>${funds.fAnet}</td>
-            <td>${funds.fDhl}</td>
-            <td>${funds.fYearnings}</td>
-            <td>${funds.fAincome}</td>
-            <td>${funds.fType}</td></tr>
+            <td>${funds.fname}</td>
+            <td>${funds.fcode}</td>
+            <td>${funds.fnetdate}</td>
+            <td>${funds.fanet}</td>
+            <td>${funds.fdhl}</td>
+            <td>${funds.fyearnings}</td>
+            <td>${funds.faincome}</td>
+            <td>${funds.ftype}</td></tr>
         </c:forEach>
         </tbody>
     </table>

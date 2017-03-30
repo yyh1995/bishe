@@ -20,17 +20,15 @@ public class MainController {
     FundsService fundsService;
     FundsExample fundsExample;
 
+
     //return "index"：处理完该请求后返回的页面，此请求返回 名为index.jsp页面
     @RequestMapping(value="/",method= RequestMethod.GET)
-    public String index(){
+    public String index(Model model){
+
         return "index";
     }
 
-    @RequestMapping(value = "/")
-    public String getAllFunds(){
-        List<Funds> funds=fundsService.getFunds(fundsExample);
-        return "index";
-    }
+
 
     @RequestMapping("/hello" )
     public String hello(){

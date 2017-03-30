@@ -6,7 +6,6 @@ import com.yyh.pojo.FundsExample;
 import com.yyh.service.FundsService;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -24,4 +23,6 @@ public class FundsServiceImpl implements FundsService {
     public List<Funds> getFunds(FundsExample fundsExample) {
         return fundsMapper.selectByExample(fundsExample);
     }
+
+    public List<Funds> getAllFunds(){return fundsMapper.getAllFunds();}
 }
