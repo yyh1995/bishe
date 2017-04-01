@@ -1,0 +1,5 @@
+# bishe结束总结：
+1.WEB-INF下的资源（jsp,js，css,image）无法通过url直接访问。
+        解决：a.我们可以将(js,css,image）新建文件夹放在web-inf外面
+              b.通过action中写转向代码间接访问jsp（推荐）
+              
