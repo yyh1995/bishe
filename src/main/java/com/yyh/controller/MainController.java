@@ -24,13 +24,7 @@ public class MainController {
     @Autowired
     FundsService fundsService;
 
-    /**
-     * 登录/获取funds表中数据
-     * @param user
-     * @param model
-     * @param session
-     * @return
-     */
+
     @RequestMapping(value = "/login.do",method = RequestMethod.POST)
     public String login(User user, Model model, HttpSession session){
         //获取funds表中所有数据
@@ -51,13 +45,17 @@ public class MainController {
     }
 
 
-    /**
-     * 注册
-     * @param user
-     * @param upassword
-     * @param model
-     * @return
-     */
+
+    //转向注册页面
+    @RequestMapping(value = "/goto_register.do")
+    public String goto_register(){
+        return "register";
+    }
+
+
+
+
+    //注册
     @RequestMapping(value = "/register.do",method = RequestMethod.POST)
     public String register(User user, String upassword,Model model){
         String result = userService.register(user,upassword);
@@ -68,7 +66,7 @@ public class MainController {
             model.addAttribute("register","yes");
             model.addAttribute("email",user.getUemail());
             model.addAttribute("error",result);
-            return "login";
+            return "register";
         }
     }
 }

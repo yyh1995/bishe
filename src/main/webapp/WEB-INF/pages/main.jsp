@@ -15,12 +15,92 @@
     <link href="../../common/swiper/css/swiper.min.css" rel="stylesheet">
 
     <script src="../../common/swiper/js/swiper.min.js"></script>
+    <style>
+        /*左侧菜单*/
+        .sidebar-menu{
+            border-right: 1px solid #c4c8cb;
+        }
+        /*一级菜单*/
+        .menu-first{
+            height:45px;
+            line-height:45px;
+            background-color: #e9e9e9;
+            border-top: 1px solid #efefef;
+            border-bottom: 1px solid #e1e1e1;
+            padding: 0;
+            font-size: 14px;
+            font-weight: normal;
+            text-align: center;
+        }
+        /*一级菜单鼠标划过状态*/
+        .menu-first:hover{
+            text-decoration: none;
+            background-color: #d6d4d5;
+            border-top: 1px solid #b7b7b7;
+            border-bottom: 1px solid #acacac;
+        }
+        /*二级菜单*/
+        .menu-second li a{
+            background-color: #f6f6f6;
+            height:31px;
+            line-height:31px;
+            border-top: 1px solid #efefef;
+            border-bottom: 1px solid #efefef;
+            font-size: 12px;
+            text-align:center;
+        }
+        /*二级菜单鼠标划过样式*/
+        .menu-second li a:hover {
+            text-decoration: none;
+            background-color: #66c3ec;
+            border-top: 1px solid #83ceed;
+            border-bottom: 1px solid #83ceed;
+            border-right: 3px solid #f8881c;
+            border-left: 3px solid #66c3ec;
+        }
+        /*二级菜单选中状态*/
+        .menu-second-selected {
+            background-color: #66c3ec;
+            height:31px;
+            line-height:31px;
+            border-top: 1px solid #83ceed;
+            border-bottom: 1px solid #83ceed;
+            border-right: 3px solid #f8881c;
+            border-left: 3px solid #66c3ec;
+            text-align:center;
+        }
+        /*覆盖bootstrap的样式*/
+        .nav-list,.nav-list li a{
+            padding: 0px;
+            margin: 0px;
+        }
+    </style>
 
 </head>
 
 <body>
-
-
+<!--导航条-->
+<nav class="navbar navbar-inverse ">
+    <div class="container">
+        <div class="navbar-header ">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand navbar-left" style="font-weight:bold;font-size:25px;" href="http://localhost:8081/">基金行情网</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <form action="user.do" method="post" class="navbar-form navbar-right">
+                <a href="/user.do" class="btn btn-info active" style="font-size: 17px;font-weight:bold" role="button">个人主页</a>
+            </form>
+        </div>
+</nav>
+</br>
+</br>
+</br>
+</br>
 <!--展示模块-->
 <div class="container">
     <table style="width: 1200px;height:800px; " class="table table-striped table-hover table-bordered">

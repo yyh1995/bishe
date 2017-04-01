@@ -18,3 +18,4 @@ public interface UserService {
     //注册
     String register(User user,String upassword);
 }
+

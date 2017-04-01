@@ -17,28 +17,15 @@ import java.util.List;
  */
 @Controller
 public class IndexController {
-    Funds funds;
     @Autowired
     FundsService fundsService;
 
 
-
     //return "index"：处理完该请求后返回的页面，此请求返回 名为index.jsp页面
     @RequestMapping(value="/",method= RequestMethod.GET)
-    public String index(Model model){
-        List<Funds>fundsList=fundsService.getAllFunds();
-        model.addAttribute("fundsList",fundsList);
-
+    public String index(){
         return "index";
     }
 
 
-
-    @RequestMapping("/hello" )
-    public String hello(){
-        return "hello";
-    }
-
-    @RequestMapping("/ssd")
-    public String ssd(){return "ssd";}
 }

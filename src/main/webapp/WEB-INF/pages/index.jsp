@@ -56,19 +56,19 @@
 
 <body>
 <!--导航条-->
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top nav-justified">
     <div class="container">
-        <div class="navbar-header">
+        <div class="navbar-header ">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" style="font-weight:bold;font-size:25px;" href="http://localhost:8081/">基金行情网</a>
+            <a class="navbar-brand navbar-left" style="font-weight:bold;font-size:25px;" href="http://localhost:8081/">基金行情网</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <form action="login.do" method="post" class="navbar-form navbar-right">
+            <form action="/login.do" method="post" class="navbar-form navbar-right">
                 <div class="form-group">
                     <input type="text" placeholder="邮箱/手机" class="form-control" value="${uaccount}">
                 </div>
@@ -76,7 +76,7 @@
                     <input type="password" placeholder="密码" class="form-control" value="${upassword}">
                 </div>
                 <button type="submit" class="btn btn-success" style="font-size: 17px;font-weight:bold">登陆</button>
-                <a href="/register.do" class="btn btn-info active" style="font-size: 17px;font-weight:bold" role="button">注册</a>
+                <a href="/goto_register.do" class="btn btn-info active" style="font-size: 17px;font-weight:bold" role="button">注册</a>
             </form>
         </div>
     </div>
@@ -104,9 +104,9 @@
 
         <div class="swiper-slide" style="background-image:url(../../common/images/3.jpg)">
             <div class="title" data-swiper-parallax="-4500">.</div>
-            <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+            <div class="subtitle" data-swiper-parallax="-200">小栗旬</div>
             <div class="text" data-swiper-parallax="-4500">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
+                <p>虽然小栗旬的大多数角色乍看之下都有些相似，但细细品味则会发现有许多不同之处。他能巧妙地抓住每个角色的独特个性且能将其演得惟妙惟肖的。</p>
             </div>
         </div>
     </div>
