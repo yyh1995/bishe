@@ -12,9 +12,6 @@ import java.util.List;
  */
 @Service
 public interface FundsService {
-    Funds getFundsById(int id);
-
-    List<Funds> getFunds(FundsExample fundsExample);
 
     List<Funds> getAllFunds();
 

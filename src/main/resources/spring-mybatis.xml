@@ -54,4 +54,23 @@
         <property name="dataSource" ref="dataSource" />
     </bean>
 
+    <!--邮件处理-->
+    <bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="smtp.qq.com"/>
+        <property name="username" value="923402474@qq.com"/>
+        <property name="password" value="XXXXXX"/>
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.auth">true</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--线程池-->
+    <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+        <property name="corePoolSize" value="10"/>
+        <property name="maxPoolSize" value="20"/>
+        <property name="queueCapacity" value="20"/>
+    </bean>
+
 </beans>

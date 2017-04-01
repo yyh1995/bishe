@@ -11,46 +11,87 @@
       <table id="2" parent="1" name="funds">
         <comment>基金表</comment>
       </table>
-      <column id="3" parent="2" name="id">
+      <table id="3" parent="1" name="user">
+        <comment>用户表</comment>
+      </table>
+      <column id="4" parent="2" name="id">
         <comment>ID</comment>
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="4" parent="2" name="fName">
+      <column id="5" parent="2" name="fName">
         <comment>基金名称</comment>
         <mandatory>1</mandatory>
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="5" parent="2" name="fCode">
+      <column id="6" parent="2" name="fCode">
         <comment>基金代码</comment>
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="6" parent="2" name="fNetdate">
+      <column id="7" parent="2" name="fNetdate">
         <comment>净值日期</comment>
         <data-type>date</data-type>
       </column>
-      <column id="7" parent="2" name="fAnet">
+      <column id="8" parent="2" name="fAnet">
         <comment>累计净值</comment>
         <data-type>double</data-type>
       </column>
-      <column id="8" parent="2" name="fDhl">
+      <column id="9" parent="2" name="fDhl">
         <comment>日涨跌</comment>
         <data-type>double</data-type>
       </column>
-      <column id="9" parent="2" name="fYearnings">
+      <column id="10" parent="2" name="fYearnings">
         <comment>今年收益</comment>
         <data-type>double</data-type>
       </column>
-      <column id="10" parent="2" name="fAincome">
+      <column id="11" parent="2" name="fAincome">
         <comment>累计收益</comment>
         <data-type>double</data-type>
       </column>
-      <column id="11" parent="2" name="fType">
+      <column id="12" parent="2" name="fType">
         <comment>基金类型</comment>
         <data-type>varchar(10)</data-type>
       </column>
-      <key id="12" parent="2" name="PRIMARY">
+      <key id="13" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="14" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="15" parent="3" name="uname">
+        <comment>用户姓名</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="16" parent="3" name="uaccout">
+        <comment>用户账户</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="17" parent="3" name="upassword">
+        <comment>用户密码</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="18" parent="3" name="uactived">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="19" parent="3" name="uactive_code">
+        <data-type>varchar(60)</data-type>
+      </column>
+      <column id="20" parent="3" name="uemail">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="21" parent="3" name="head_url">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="22" parent="3" name="ujoin_time">
+        <data-type>varchar(30)</data-type>
+      </column>
+      <key id="23" parent="3" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>

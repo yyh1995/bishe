@@ -4,8 +4,10 @@ import com.yyh.dao.FundsMapper;
 import com.yyh.pojo.Funds;
 import com.yyh.pojo.FundsExample;
 import com.yyh.service.FundsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.xml.ws.soap.Addressing;
 import java.util.List;
 
 /**
@@ -13,16 +15,9 @@ import java.util.List;
  */
 @Service
 public class FundsServiceImpl implements FundsService {
-
+    @Autowired
     private FundsMapper fundsMapper;
 
-    public Funds getFundsById(int id) {
-        return fundsMapper.selectByPrimaryKey(id);
-    }
-
-    public List<Funds> getFunds(FundsExample fundsExample) {
-        return fundsMapper.selectByExample(fundsExample);
-    }
 
     public List<Funds> getAllFunds(){return fundsMapper.getAllFunds();}
 }
