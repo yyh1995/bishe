@@ -1,3 +1,6 @@
+<%--
+主页页面
+--%>
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -89,7 +92,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand navbar-left" style="font-weight:bold;font-size:25px;" href="http://localhost:8081/">基金行情网</a>
+            <a class="navbar-brand navbar-left" style="font-weight:bold;font-size:25px;" href="#">基金行情网</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <form action="user.do" method="post" class="navbar-form navbar-right">
@@ -97,6 +100,7 @@
             </form>
         </div>
 </nav>
+
 </br>
 </br>
 </br>

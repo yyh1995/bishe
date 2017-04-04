@@ -13,9 +13,9 @@ public interface UserMapper {
 
     String selectHeadUrl(int uid);
 
-    int selectActived(User user);
+    Integer selectActived(User user);
 
-    int selectEmailCount(String email);
+    Integer selectEmailCount(String email);
 
     void insertUser(User user);
 

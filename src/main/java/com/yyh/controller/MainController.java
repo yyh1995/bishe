@@ -36,23 +36,20 @@ public class MainController {
         if(map.get("status").equals("yes")){
             session.setAttribute("id",map.get("id"));
             session.setAttribute("headUrl",map.get("headUrl"));
-            return "redirect:toMyProfile.do";
-        }else {
-            model.addAttribute("email",user.getUemail());
-            model.addAttribute("error",map.get("error"));
             return "main";
+        }else {
+            model.addAttribute("uemail",user.getUemail());
+            model.addAttribute("error",map.get("error"));
+            return "index";
         }
     }
 
 
-
-    //转向注册页面
+    //转向注册页面（WEB-INF下的资源不能直接访问，jsp资源通过controller间接访问）
     @RequestMapping(value = "/goto_register.do")
     public String goto_register(){
         return "register";
     }
-
-
 
 
     //注册

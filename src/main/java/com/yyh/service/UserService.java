@@ -1,7 +1,6 @@
 package com.yyh.service;
 
 import com.yyh.pojo.User;
-import com.yyh.pojo.UserExample;
 import org.springframework.stereotype.Service;
 
 

@@ -1,12 +1,16 @@
+<%--
+注册页面
+--%>
 <!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <script src="js/jquery.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <title>注册页面</title>
+    <link rel="stylesheet" href="../../common/bootstrap/css/bootstrap.css">
+    <script src="../../common/jquery-3.2.0.min.js"></script>
+    <script src="../../common/bootstrap/js/bootstrap.min.js"></script>
 
     <style>
         body{
@@ -28,10 +32,10 @@
     </style>
 </head>
 <body>
-<ul class="nav navbar-nav navbar-right">
+<%--<ul class="nav navbar-nav navbar-right">
     <li><a data-toggle="modal" data-target="#register" href=""><span class="glyphicon glyphicon-user"></span> 注册</a></li>
     <li><a data-toggle="modal" data-target="#login" href=""><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
-</ul>
+</ul>--%>
 <!-- 注册窗口 -->
 <div id="register" class="modal fade" tabindex="-1">
     <div class="modal-dialog">
@@ -47,19 +51,19 @@
             <div class="modal-body">
                 <form class="form-group" action="">
                     <div class="form-group">
-                        <label for="">用户名</label>
-                        <input class="form-control" type="text" placeholder="6-15位字母或数字">
+                        <label>用户名</label>
+                        <input class="form-control" type="text" placeholder="6-15位字母或数字" value="${uname}">
                     </div>
                     <div class="form-group">
-                        <label for="">密码</label>
+                        <label >密码</label>
                         <input class="form-control" type="password" placeholder="至少6位字母或数字">
                     </div>
                     <div class="form-group">
-                        <label for="">再次输入密码</label>
+                        <label >再次输入密码</label>
                         <input class="form-control" type="password" placeholder="至少6位字母或数字">
                     </div>
                     <div class="form-group">
-                        <label for="">邮箱</label>
+                        <label >邮箱</label>
                         <input class="form-control" type="email" placeholder="例如:123@123.com">
                     </div>
                     <div class="text-right">
@@ -72,8 +76,10 @@
         </div>
     </div>
 </div>
+
+
 <!-- 登录窗口 -->
-<div id="login" class="modal fade">
+<%--<div id="login" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
@@ -103,7 +109,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>--%>
 
 </body>
 </html>

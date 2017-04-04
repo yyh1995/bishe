@@ -93,13 +93,10 @@ public class UserServiceImpl implements UserService {
         user.setUjoin_time(MyUtil.formatDate(new Date()));
         user.setUname("DF"+new Random().nextInt(10000)+"号");
         user.setHeadUrl(MyConstant.QINIU_IMAGE_URL +"head.jpg");
-
         //发送邮件
         taskExecutor.execute(new MailTask(activateCode,user.getUemail(),javaMailSender,1));
-
         //向数据库插入记录
         userMapper.insertUser(user);
-
         return "ok";
     }
 

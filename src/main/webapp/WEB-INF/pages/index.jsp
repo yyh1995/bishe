@@ -1,3 +1,7 @@
+<%--
+首页页面
+--%>
+
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -68,12 +72,13 @@
             <a class="navbar-brand navbar-left" style="font-weight:bold;font-size:25px;" href="http://localhost:8081/">基金行情网</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
+            <div class="error-message">${error}</div>
             <form action="/login.do" method="post" class="navbar-form navbar-right">
                 <div class="form-group">
-                    <input type="text" placeholder="邮箱/手机" class="form-control" value="${uaccount}">
+                    <input type="text" placeholder="邮箱" class="form-control" name="uemail">
                 </div>
                 <div class="form-group">
-                    <input type="password" placeholder="密码" class="form-control" value="${upassword}">
+                    <input type="password" placeholder="密码" class="form-control" name="upassword">
                 </div>
                 <button type="submit" class="btn btn-success" style="font-size: 17px;font-weight:bold">登陆</button>
                 <a href="/goto_register.do" class="btn btn-info active" style="font-size: 17px;font-weight:bold" role="button">注册</a>
