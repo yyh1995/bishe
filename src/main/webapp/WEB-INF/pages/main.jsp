@@ -95,8 +95,8 @@
             <a class="navbar-brand navbar-left" style="font-weight:bold;font-size:25px;" href="#">基金行情网</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <form action="user.do" method="post" class="navbar-form navbar-right">
-                <a href="/user.do" class="btn btn-info active" style="font-size: 17px;font-weight:bold" role="button">个人主页</a>
+            <form action="" method="post" class="navbar-form navbar-right">
+                <a href="/main/user.do" class="btn btn-info active" style="font-size: 17px;font-weight:bold" role="button">个人主页</a>
             </form>
         </div>
 </nav>
@@ -107,6 +107,12 @@
 </br>
 <!--展示模块-->
 <div class="container">
+    <h2>旗下基金</h2>
+        <a id="gpx" href="#" class="btn btn-primary btn-lg">股票型基金</a>
+        <a id="zqx" href="#" class="btn btn-success btn-lg">债券型基金</a>
+        <a id="hhx" href="#" class="btn btn-info btn-lg">混合型基金</a>
+        <a id="zsx" href="#" class="btn btn-warning btn-lg">指数型基金</a>
+        <a id="hbx" href="#" class="btn btn-danger btn-lg">货币型基金</a>
     <table style="width: 1200px;height:800px; " class="table table-striped table-hover table-bordered">
         <thead>
         <tr>
@@ -117,9 +123,10 @@
             <th>日涨跌</th>
             <th>今年收益</th>
             <th>累计收益</th>
-            <th>申购</th>
+            <th>网上直销</th>
         </tr>
         </thead>
+
         <tbody>
         <c:forEach var="funds" items="${fundsList}">
             <tr>
@@ -130,7 +137,8 @@
                 <td>${funds.fdhl}</td>
                 <td>${funds.fyearnings}</td>
                 <td>${funds.faincome}</td>
-                <td>${funds.ftype}</td></tr>
+                <td><a class="btn btn-warning  btn-block" href="/main/product.do">申购</a></td>
+            </tr>
         </c:forEach>
         </tbody>
     </table>

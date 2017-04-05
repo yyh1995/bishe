@@ -44,8 +44,8 @@ public class UserServiceImpl implements UserService {
             return map;
         }
 
-       int checkActived = userMapper.selectActived(user);
-       if (checkActived == 0) {
+       Integer checkActived = userMapper.selectActived(user);
+       if (checkActived == null || checkActived == 0) {
             map.put("status", "no");
             map.put("error", "您还没有激活账户哦，请前往邮箱激活~");
             return map;

@@ -73,7 +73,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <div class="error-message">${error}</div>
-            <form action="/login.do" method="post" class="navbar-form navbar-right">
+            <form action="/main" method="post" class="navbar-form navbar-right">
                 <div class="form-group">
                     <input type="text" placeholder="邮箱" class="form-control" name="uemail">
                 </div>
@@ -95,7 +95,7 @@
             <div class="title" data-swiper-parallax="-100">.</div>
             <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
             <div class="text" data-swiper-parallax="-300">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
+                <p>测试特殊测试特殊测试特殊测试特殊测试特殊测试特殊测试特殊测试特殊</p>
             </div>
         </div>
 
@@ -103,7 +103,7 @@
             <div class="title" data-swiper-parallax="-100">.</div>
             <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
             <div class="text" data-swiper-parallax="-300">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
+                <p>测试特殊测试特殊测试特殊测试特殊测试特殊测试特殊测试特殊测试特殊测试特殊测试特殊测试特殊测试特殊测试特殊</p>
             </div>
         </div>
 

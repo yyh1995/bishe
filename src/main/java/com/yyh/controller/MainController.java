@@ -18,52 +18,23 @@ import java.util.Map;
  * Created by yyh on 2017/3/31.
  */
 @Controller
+@RequestMapping("/main")
 public class MainController {
     @Autowired
     UserService userService;
     @Autowired
     FundsService fundsService;
 
+    @RequestMapping(value = "/buy.do")
+    public String goto_buy(){
+        return "buy";
+    }
 
-    @RequestMapping(value = "/login.do",method = RequestMethod.POST)
-    public String login(User user, Model model, HttpSession session){
-        //获取funds表中所有数据
-        List<Funds> fundsList=fundsService.getAllFunds();
-        model.addAttribute("fundsList",fundsList);
-
-        //登陆功能
-        Map<String,Object> map = userService.login(user);
-        if(map.get("status").equals("yes")){
-            session.setAttribute("id",map.get("id"));
-            session.setAttribute("headUrl",map.get("headUrl"));
-            return "main";
-        }else {
-            model.addAttribute("uemail",user.getUemail());
-            model.addAttribute("error",map.get("error"));
-            return "index";
-        }
+    @RequestMapping(value="/user.do")
+    public String goto_user(){
+        return "user";
     }
 
 
-    //转向注册页面（WEB-INF下的资源不能直接访问，jsp资源通过controller间接访问）
-    @RequestMapping(value = "/goto_register.do")
-    public String goto_register(){
-        return "register";
-    }
 
-
-    //注册
-    @RequestMapping(value = "/register.do",method = RequestMethod.POST)
-    public String register(User user, String upassword,Model model){
-        String result = userService.register(user,upassword);
-        if(result.equals("ok")){
-            model.addAttribute("info","系统已经向你的邮箱发送了一封邮件哦，验证后就可以登录啦~");
-            return "prompt/promptInfo";
-        }else {
-            model.addAttribute("register","yes");
-            model.addAttribute("email",user.getUemail());
-            model.addAttribute("error",result);
-            return "register";
-        }
-    }
 }
