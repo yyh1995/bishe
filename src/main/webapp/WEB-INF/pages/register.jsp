@@ -19,52 +19,14 @@
     <link rel="stylesheet" href="../../common/css/form-elements.css">
     <link rel="stylesheet" href="../../common/css/style.css">
 
-    <!-- Favicon and touch icons -->
-<%--    <link rel="shortcut icon" href="assets/ico/favicon.png">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">--%>
+    <script type="text/javascript" src="../../common/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="../../common/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../common/bootstrap/js/bootstrapValidator.js"></script>
+
 
 </head>
 
 <body>
-
-<!-- Top menu -->
-<%--<nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html">Bootstrap Multi Step Registration Form Template</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="top-navbar-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-							<span class="li-text">
-								Put some text or
-							</span>
-                    <a href="#"><strong>links</strong></a>
-							<span class="li-text">
-								here, or some icons:
-							</span>
-							<span class="li-social">
-								<a href="#"><i class="fa fa-facebook"></i></a>
-								<a href="#"><i class="fa fa-twitter"></i></a>
-								<a href="#"><i class="fa fa-envelope"></i></a>
-								<a href="#"><i class="fa fa-skype"></i></a>
-							</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>--%>
-
 <!-- Top content -->
 <div class="top-content" style="background-size:cover;background-image:url(../../common/images/1.jpg)">
     <div class="inner-bg">
@@ -82,7 +44,7 @@
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3 form-box">
 
-                    <form role="form" action="" method="post" class="registration-form">
+                    <form id="registration-form" role="form"  method="post" class="registration-form" action="/register.do">
 
                         <fieldset>
                             <div class="form-top">
@@ -96,14 +58,18 @@
                             </div>
                             <div class="form-bottom">
                                 <div class="form-group">
-                                    <label  for="form-email">邮箱：</label>
-                                    <input type="text" name="form-email" placeholder="邮箱" class="form-email form-control" id="form-email">
+                                    <label  for="name">用户名：</label>
+                                    <input type="text" name="name" placeholder="用户名" class="name form-control" id="name">
                                 </div>
                                 <div class="form-group">
-                                    <label  for="form-yzm">验证码:</label>
-                                    <input type="text" name="form-yzm" placeholder="验证码" class="form-yzm form-control" id="form-yzm">
+                                    <label  for="email">邮箱：</label>
+                                    <input type="email" name="email" value=" " placeholder="邮箱" class="email form-control" id="email">
                                 </div>
-                                <button type="button" class="btn btn-next">Next</button>
+                                <div class="form-group">
+                                    <label  for="yzm">验证码:</label>
+                                    <input type="text" name="yzm" placeholder="验证码" class="yzm form-control" id="yzm">
+                                </div>
+                                <button type="submit" class="btn btn-next">下一步</button>
                             </div>
                         </fieldset>
 
@@ -120,17 +86,17 @@
                             </div>
                             <div class="form-bottom">
                                 <div class="form-group">
-                                    <label  for="form-password">Email</label>
-                                    <input type="text" name="form-password" placeholder="密码" class="form-email form-control" id="form-password">
+                                    <label  for="password">密码：</label>
+                                    <input type="password" name="password" placeholder="密码" class="password form-control" id="password">
                                 </div>
                                 <div class="form-group">
-                                    <label  for="form-repeat-password">Password</label>
-                                    <input type="password" name="form-password" placeholder="重新输入密码" class="form-password form-control" id="form-repeat-password">
+                                    <label  for="comfirm_password">确认密码：</label>
+                                    <input type="password" name="comfirm_password" placeholder="重新输入密码" class="comfirm_password form-control" id="comfirm_password">
                                 </div>
-                                <button type="button" class="btn btn-previous">Previous</button>
-                                <button type="button" class="btn btn-next">Next</button>
+                                <button type="submit" class="btn btn-next">下一步</button>
                             </div>
                         </fieldset>
+
 
                         <fieldset>
                             <div class="form-top">
@@ -155,16 +121,130 @@
 
 
 <!-- Javascript -->
-<script src="../../common/jquery-3.2.0.min.js"></script>
-<script src="../../common/bootstrap/js/bootstrap.min.js"></script>
-<script src="../../common/js/jquery.backstretch.min.js"></script>
-<script src="../../common/js/retina-1.1.0.min.js"></script>
-<script src="../../common/js/scripts.js"></script>
+<script type="text/javascript"  src="../../common/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript"  src="../../common/js/jquery.backstretch.min.js"></script>
+<script type="text/javascript"  src="../../common/js/retina-1.1.0.min.js"></script>
+<script type="text/javascript"  src="../../common/js/scripts.js"></script>
 
-<!--[if lt IE 10]>
-<script src="../../common/js/placeholder.js"></script>
-<![endif]-->
+<%--<script type="text/javascript">
+    $.validator.setDefaults({
+        submitHandler: function(form) {
+            alert("提交事件!");
+            form.submit();
+        }
+    });
 
+    $(document).ready(function(){
+        $("#registration-form").validate({
+
+            rules:{
+                name:{
+                    required:true
+                },
+                email:{
+                    required:true,
+                    email:true
+                },
+                yzm:{
+                    required:true
+                },
+                password:{
+                    required:true,
+                    rangelength:[3,10]
+                },
+                confirm_password:{
+                    equalTo:"#password"
+                }
+            },
+            messages:{
+                name:{
+                    required:"必填"
+                },
+                email:{
+                    required:"必填",
+                    email:"E-Mail格式不正确"
+                },
+                password:{
+                    required: "不能为空"
+                },
+                confirm_password:{
+                    equalTo:"两次密码输入不一致"
+                }
+            }
+
+        })
+    });
+</script>--%>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#registration-form').bootstrapValidator({
+//        live: 'disabled',
+            message: 'This value is not valid',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                name: {
+                    message: '用户名不能为空',
+                    validators: {
+                        notEmpty: {
+                            message: '用户名不能为空'
+                        },
+                        stringLength: {
+                            min: 3,
+                            max: 6,
+                            message: '用户名3~6个字符'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9_\.]+$/,
+                            message: '用户名只能包含字母，数字'
+                        },
+                        different: {
+                            field: 'password',
+                            message: '用户名和密码不能一样'
+                        }
+                    }
+                },
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message: '邮箱不能为空'
+                        },
+                        emailAddress: {
+                            message: '邮箱地址无效'
+                        }
+                    }
+                },
+                password: {
+                    validators: {
+                        notEmpty: {
+                            message: '密码不能为空'
+                        },
+                        different: {
+                            field: 'name',
+                            message: '密码不能和用户名一致'
+                        }
+                    }
+                },
+                comfirm_password: {
+                    validators: {
+                        notEmpty: {
+                            message: '确认密码不能为空'
+                        },
+                        identical: {
+                            field: 'password',
+                            message: '密码不一致'
+                        }
+                    }
+                }
+
+            }
+        });
+
+    });
+</script>
 </body>
 
 </html>

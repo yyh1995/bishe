@@ -19,6 +19,7 @@
     <link href="../../common/swiper/css/swiper.min.css" rel="stylesheet">
 
     <script src="../../common/swiper/js/swiper.min.js"></script>
+    <script src="../../common/jquery.validate.min.js"></script>
 
 
     <!-- 轮番图STYLE-->
