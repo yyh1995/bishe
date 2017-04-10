@@ -68,7 +68,6 @@
       </column>
       <column id="16" parent="3" name="uaccout">
         <comment>用户账户</comment>
-        <mandatory>1</mandatory>
         <data-type>varchar(20)</data-type>
       </column>
       <column id="17" parent="3" name="upassword">

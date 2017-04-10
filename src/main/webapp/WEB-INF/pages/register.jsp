@@ -59,11 +59,11 @@
                             <div class="form-bottom">
                                 <div class="form-group">
                                     <label  for="name">用户名：</label>
-                                    <input type="text" name="name" placeholder="用户名" class="name form-control" id="name">
+                                    <input type="text" name="name" value="${user.uname}" placeholder="用户名" class="name form-control" id="name">
                                 </div>
                                 <div class="form-group">
                                     <label  for="email">邮箱：</label>
-                                    <input type="email" name="email" value=" " placeholder="邮箱" class="email form-control" id="email">
+                                    <input type="email" name="email" value="${user.uemail}" placeholder="邮箱" class="email form-control" id="email">
                                 </div>
                                 <div class="form-group">
                                     <label  for="yzm">验证码:</label>
@@ -126,55 +126,7 @@
 <script type="text/javascript"  src="../../common/js/retina-1.1.0.min.js"></script>
 <script type="text/javascript"  src="../../common/js/scripts.js"></script>
 
-<%--<script type="text/javascript">
-    $.validator.setDefaults({
-        submitHandler: function(form) {
-            alert("提交事件!");
-            form.submit();
-        }
-    });
-
-    $(document).ready(function(){
-        $("#registration-form").validate({
-
-            rules:{
-                name:{
-                    required:true
-                },
-                email:{
-                    required:true,
-                    email:true
-                },
-                yzm:{
-                    required:true
-                },
-                password:{
-                    required:true,
-                    rangelength:[3,10]
-                },
-                confirm_password:{
-                    equalTo:"#password"
-                }
-            },
-            messages:{
-                name:{
-                    required:"必填"
-                },
-                email:{
-                    required:"必填",
-                    email:"E-Mail格式不正确"
-                },
-                password:{
-                    required: "不能为空"
-                },
-                confirm_password:{
-                    equalTo:"两次密码输入不一致"
-                }
-            }
-
-        })
-    });
-</script>--%>
+<!--bootstrap 验证-->
 <script type="text/javascript">
     $(document).ready(function() {
         $('#registration-form').bootstrapValidator({

@@ -137,7 +137,7 @@
                 <td>${funds.fdhl}</td>
                 <td>${funds.fyearnings}</td>
                 <td>${funds.faincome}</td>
-                <td><a class="btn btn-warning  btn-block" href="/main/product.do">申购</a></td>
+                <td><a class="btn btn-warning  btn-block" href="/main/buy.do">申购</a></td>
             </tr>
         </c:forEach>
         </tbody>

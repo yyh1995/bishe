@@ -8,6 +8,7 @@ import com.yyh.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -64,8 +65,8 @@ public class IndexController {
 
     //注册
     @RequestMapping(value = "/register.do",method = RequestMethod.POST)
-    public String register(User user, String upassword,Model model){
-        String result = userService.register(user,upassword);
+    public String register(@ModelAttribute("user") User user, String upassword, Model model){
+      /*  String result = userService.register(user,upassword);
         if(result.equals("ok")){
             model.addAttribute("info","系统已经向你的邮箱发送了一封邮件哦，验证后就可以登录啦~");
             return "prompt/promptInfo";
@@ -74,7 +75,9 @@ public class IndexController {
             model.addAttribute("email",user.getUemail());
             model.addAttribute("error",result);
             return "register";
-        }
+        }*/
+
+        return "user";
     }
 
 

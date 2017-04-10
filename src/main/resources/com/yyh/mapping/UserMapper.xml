@@ -7,7 +7,7 @@
 
     <insert id="insertUser">
       insert into user(uemail,upassword,uactived,uactive_code,ujoin_time,uname,head_url)
-      values(#{uemail},#{upassword},#{uactived},#{uactiveCode},#{ujoinTime},#{uname},#{headUrl})
+      values(#{uemail},#{upassword},#{uactived},#{uactiveCode},#{ujoin_time},#{uname},#{headUrl})
     </insert>
 
 

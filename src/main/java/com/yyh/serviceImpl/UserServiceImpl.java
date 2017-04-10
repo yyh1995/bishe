@@ -79,26 +79,27 @@ public class UserServiceImpl implements UserService {
         //检查密码
         if(!user.getUpassword().equals(upassword)){
             return "两次密码输入不一致~";
-        }*/
+        }
 
         //检查邮箱是否被注册
         int emailCount = userMapper.selectEmailCount(user.getUemail());
         if(emailCount>0){
             return "该邮箱已被注册~";
-        }
+        }*/
 
         //构造user，设置未激活
         user.setUactived(0);
         String activateCode = MyUtil.createActivateCode();
         user.setUactiveCode(activateCode);
         user.setUjoin_time(MyUtil.formatDate(new Date()));
-      /*  user.setUname("DF"+new Random().nextInt(10000)+"号");*/
         user.setHeadUrl(MyConstant.QINIU_IMAGE_URL +"head.jpg");
         //发送邮件
         taskExecutor.execute(new MailTask(activateCode,user.getUemail(),javaMailSender,1));
         //向数据库插入记录
         userMapper.insertUser(user);
         return "ok";
+
+
     }
 
 
