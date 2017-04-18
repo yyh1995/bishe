@@ -76,10 +76,10 @@
             <div class="error-message">${error}</div>
             <form action="/main" method="post" class="navbar-form navbar-right">
                 <div class="form-group">
-                    <input type="text" placeholder="邮箱" class="form-control" name="uemail">
+                    <input type="text" placeholder="邮箱" class="form-control" name="email">
                 </div>
                 <div class="form-group">
-                    <input type="password" placeholder="密码" class="form-control" name="upassword">
+                    <input type="password" placeholder="密码" class="form-control" name="password">
                 </div>
                 <button type="submit" class="btn btn-success" style="font-size: 17px;font-weight:bold">登陆</button>
                 <a href="/goto_register.do" class="btn btn-info active" style="font-size: 17px;font-weight:bold" role="button">注册</a>

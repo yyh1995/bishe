@@ -1,24 +1,6 @@
 package com.yyh.pojo;
 
 public class User {
-    private Integer id;
-
-    private String uname;
-
-    private String uaccout;
-
-    private String upassword;
-
-    private Integer uactived;
-
-    private String uactiveCode;
-
-    private String uemail;
-
-    private String headUrl;
-
-    private String ujoin_time;
-
     public Integer getId() {
         return id;
     }
@@ -27,52 +9,52 @@ public class User {
         this.id = id;
     }
 
-    public String getUname() {
-        return uname;
+    public String getName() {
+        return name;
     }
 
-    public void setUname(String uname) {
-        this.uname = uname == null ? null : uname.trim();
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getUaccout() {
-        return uaccout;
+    public String getAccout() {
+        return accout;
     }
 
-    public void setUaccout(String uaccout) {
-        this.uaccout = uaccout == null ? null : uaccout.trim();
+    public void setAccout(String accout) {
+        this.accout = accout;
     }
 
-    public String getUpassword() {
-        return upassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUpassword(String upassword) {
-        this.upassword = upassword == null ? null : upassword.trim();
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public Integer getUactived() {
-        return uactived;
+    public Integer getActived() {
+        return actived;
     }
 
-    public void setUactived(Integer uactived) {
-        this.uactived = uactived;
+    public void setActived(Integer actived) {
+        this.actived = actived;
     }
 
-    public String getUactiveCode() {
-        return uactiveCode;
+    public String getActiveCode() {
+        return activeCode;
     }
 
-    public void setUactiveCode(String uactiveCode) {
-        this.uactiveCode = uactiveCode == null ? null : uactiveCode.trim();
+    public void setActiveCode(String activeCode) {
+        this.activeCode = activeCode;
     }
 
-    public String getUemail() {
-        return uemail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUemail(String uemail) {
-        this.uemail = uemail == null ? null : uemail.trim();
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getHeadUrl() {
@@ -80,14 +62,34 @@ public class User {
     }
 
     public void setHeadUrl(String headUrl) {
-        this.headUrl = headUrl == null ? null : headUrl.trim();
+        this.headUrl = headUrl;
     }
 
-    public String getUjoin_time() {
-        return ujoin_time;
+    public String getJoin_time() {
+        return join_time;
     }
 
-    public void setUjoin_time(String ujoin_time) {
-        this.ujoin_time = ujoin_time;
+    public void setJoin_time(String join_time) {
+        this.join_time = join_time;
     }
+
+    private Integer id;
+
+    private String name;
+
+    private String accout;
+
+    private String password;
+
+    private Integer actived;
+
+    private String activeCode;
+
+    private String email;
+
+    private String headUrl;
+
+    private String join_time;
+
+
 }

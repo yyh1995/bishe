@@ -18,5 +18,13 @@ public class FundsServiceImpl implements FundsService {
     @Autowired
     private FundsMapper fundsMapper;
 
-    public List<Funds> getAllFunds(){return fundsMapper.getAllFunds();}
+    public List<Funds> getFunds_stock(){return fundsMapper.getFunds_stock();}
+
+    public List<Funds> getFunds_bond(){return fundsMapper.getFunds_bond();}
+
+    public List<Funds> getFunds_mix(){return fundsMapper.getFunds_mix();}
+
+    public List<Funds> getFunds_currency(){return fundsMapper.getFunds_currency();}
+
+    public List<Funds> getFunds_index(){return fundsMapper.getFunds_index();}
 }

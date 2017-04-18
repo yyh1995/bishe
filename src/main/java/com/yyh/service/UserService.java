@@ -15,6 +15,6 @@ public interface UserService {
      Map<String, Object> login(User user) ;
 
     //注册
-    String register(User user,String upassword);
+    String register(User user,String password);
 }
 

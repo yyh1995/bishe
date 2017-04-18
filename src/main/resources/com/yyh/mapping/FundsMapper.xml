@@ -1,276 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yyh.dao.FundsMapper" >
-  <resultMap id="BaseResultMap" type="com.yyh.pojo.Funds" >
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="fName" property="fname" jdbcType="VARCHAR" />
-    <result column="fCode" property="fcode" jdbcType="INTEGER" />
-    <result column="fNetdate" property="fnetdate" jdbcType="DATE" />
-    <result column="fAnet" property="fanet" jdbcType="DOUBLE" />
-    <result column="fDhl" property="fdhl" jdbcType="DOUBLE" />
-    <result column="fYearnings" property="fyearnings" jdbcType="DOUBLE" />
-    <result column="fAincome" property="faincome" jdbcType="DOUBLE" />
-    <result column="fType" property="ftype" jdbcType="VARCHAR" />
-  </resultMap>
-  <sql id="Example_Where_Clause" >
-    <where >
-      <foreach collection="oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue" >
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue" >
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue" >
-                  and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause" >
-    <where >
-      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue" >
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue" >
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue" >
-                  and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Base_Column_List" >
-    id, fName, fCode, fNetdate, fAnet, fDhl, fYearnings, fAincome, fType
-  </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yyh.pojo.FundsExample" >
-    select
-    <if test="distinct" >
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from funds
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null" >
-      order by ${orderByClause}
-    </if>
-  </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from funds
-    where id = #{id,jdbcType=INTEGER}
-  </select>
   <select id="getAllFunds" resultType="com.yyh.pojo.Funds">
     select * from funds order by id
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from funds
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <delete id="deleteByExample" parameterType="com.yyh.pojo.FundsExample" >
-    delete from funds
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-  </delete>
-  <insert id="insert" parameterType="com.yyh.pojo.Funds" >
-    insert into funds (id, fName, fCode, 
-      fNetdate, fAnet, fDhl, fYearnings, 
-      fAincome, fType)
-    values (#{id,jdbcType=INTEGER}, #{fname,jdbcType=VARCHAR}, #{fcode,jdbcType=INTEGER}, 
-      #{fnetdate,jdbcType=DATE}, #{fanet,jdbcType=DOUBLE}, #{fdhl,jdbcType=DOUBLE}, #{fyearnings,jdbcType=DOUBLE}, 
-      #{faincome,jdbcType=DOUBLE}, #{ftype,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.yyh.pojo.Funds" >
-    insert into funds
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
-      <if test="fname != null" >
-        fName,
-      </if>
-      <if test="fcode != null" >
-        fCode,
-      </if>
-      <if test="fnetdate != null" >
-        fNetdate,
-      </if>
-      <if test="fanet != null" >
-        fAnet,
-      </if>
-      <if test="fdhl != null" >
-        fDhl,
-      </if>
-      <if test="fyearnings != null" >
-        fYearnings,
-      </if>
-      <if test="faincome != null" >
-        fAincome,
-      </if>
-      <if test="ftype != null" >
-        fType,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="fname != null" >
-        #{fname,jdbcType=VARCHAR},
-      </if>
-      <if test="fcode != null" >
-        #{fcode,jdbcType=INTEGER},
-      </if>
-      <if test="fnetdate != null" >
-        #{fnetdate,jdbcType=DATE},
-      </if>
-      <if test="fanet != null" >
-        #{fanet,jdbcType=DOUBLE},
-      </if>
-      <if test="fdhl != null" >
-        #{fdhl,jdbcType=DOUBLE},
-      </if>
-      <if test="fyearnings != null" >
-        #{fyearnings,jdbcType=DOUBLE},
-      </if>
-      <if test="faincome != null" >
-        #{faincome,jdbcType=DOUBLE},
-      </if>
-      <if test="ftype != null" >
-        #{ftype,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <select id="countByExample" parameterType="com.yyh.pojo.FundsExample" resultType="java.lang.Integer" >
-    select count(*) from funds
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
+
+  <select id="getFunds_stock" resultType="com.yyh.pojo.Funds">
+    select * from funds where fType="股票型" order BY id
   </select>
-  <update id="updateByExampleSelective" parameterType="map" >
-    update funds
-    <set >
-      <if test="record.id != null" >
-        id = #{record.id,jdbcType=INTEGER},
-      </if>
-      <if test="record.fname != null" >
-        fName = #{record.fname,jdbcType=VARCHAR},
-      </if>
-      <if test="record.fcode != null" >
-        fCode = #{record.fcode,jdbcType=INTEGER},
-      </if>
-      <if test="record.fnetdate != null" >
-        fNetdate = #{record.fnetdate,jdbcType=DATE},
-      </if>
-      <if test="record.fanet != null" >
-        fAnet = #{record.fanet,jdbcType=DOUBLE},
-      </if>
-      <if test="record.fdhl != null" >
-        fDhl = #{record.fdhl,jdbcType=DOUBLE},
-      </if>
-      <if test="record.fyearnings != null" >
-        fYearnings = #{record.fyearnings,jdbcType=DOUBLE},
-      </if>
-      <if test="record.faincome != null" >
-        fAincome = #{record.faincome,jdbcType=DOUBLE},
-      </if>
-      <if test="record.ftype != null" >
-        fType = #{record.ftype,jdbcType=VARCHAR},
-      </if>
-    </set>
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExample" parameterType="map" >
-    update funds
-    set id = #{record.id,jdbcType=INTEGER},
-      fName = #{record.fname,jdbcType=VARCHAR},
-      fCode = #{record.fcode,jdbcType=INTEGER},
-      fNetdate = #{record.fnetdate,jdbcType=DATE},
-      fAnet = #{record.fanet,jdbcType=DOUBLE},
-      fDhl = #{record.fdhl,jdbcType=DOUBLE},
-      fYearnings = #{record.fyearnings,jdbcType=DOUBLE},
-      fAincome = #{record.faincome,jdbcType=DOUBLE},
-      fType = #{record.ftype,jdbcType=VARCHAR}
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yyh.pojo.Funds" >
-    update funds
-    <set >
-      <if test="fname != null" >
-        fName = #{fname,jdbcType=VARCHAR},
-      </if>
-      <if test="fcode != null" >
-        fCode = #{fcode,jdbcType=INTEGER},
-      </if>
-      <if test="fnetdate != null" >
-        fNetdate = #{fnetdate,jdbcType=DATE},
-      </if>
-      <if test="fanet != null" >
-        fAnet = #{fanet,jdbcType=DOUBLE},
-      </if>
-      <if test="fdhl != null" >
-        fDhl = #{fdhl,jdbcType=DOUBLE},
-      </if>
-      <if test="fyearnings != null" >
-        fYearnings = #{fyearnings,jdbcType=DOUBLE},
-      </if>
-      <if test="faincome != null" >
-        fAincome = #{faincome,jdbcType=DOUBLE},
-      </if>
-      <if test="ftype != null" >
-        fType = #{ftype,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.yyh.pojo.Funds" >
-    update funds
-    set fName = #{fname,jdbcType=VARCHAR},
-      fCode = #{fcode,jdbcType=INTEGER},
-      fNetdate = #{fnetdate,jdbcType=DATE},
-      fAnet = #{fanet,jdbcType=DOUBLE},
-      fDhl = #{fdhl,jdbcType=DOUBLE},
-      fYearnings = #{fyearnings,jdbcType=DOUBLE},
-      fAincome = #{faincome,jdbcType=DOUBLE},
-      fType = #{ftype,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+
+  <select id="getFunds_bond" resultType="com.yyh.pojo.Funds">
+    select * from funds where fType="债券型" order BY id
+  </select>
+
+  <select id="getFunds_mix" resultType="com.yyh.pojo.Funds">
+    select * from funds where fType="混合型" order BY id
+  </select>
+
+  <select id="getFunds_currency" resultType="com.yyh.pojo.Funds">
+    select * from funds where fType="货币型" order BY id
+  </select>
+
+  <select id="getFunds_index" resultType="com.yyh.pojo.Funds">
+    select * from funds where fType="指数型" order BY id
+  </select>
+
+
 </mapper>

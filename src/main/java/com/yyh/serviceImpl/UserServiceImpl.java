@@ -60,7 +60,7 @@ public class UserServiceImpl implements UserService {
         }
 
     //注册
-    public String register(User user,String upassword) {
+    public String register(User user,String comfirm_password) {
 
        /* //校验邮箱格式
         Pattern p = Pattern.compile("^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\\.[a-zA-Z0-9_-]{2,3}){1,2})$");
@@ -87,14 +87,19 @@ public class UserServiceImpl implements UserService {
             return "该邮箱已被注册~";
         }*/
 
+        //检查密码
+        if(!user.getPassword().equals(comfirm_password)){
+            return "两次密码输入不一致~";
+        }
+
         //构造user，设置未激活
-        user.setUactived(0);
+        user.setActived(0);
         String activateCode = MyUtil.createActivateCode();
-        user.setUactiveCode(activateCode);
-        user.setUjoin_time(MyUtil.formatDate(new Date()));
+        user.setActiveCode(activateCode);
+        user.setJoin_time(MyUtil.formatDate(new Date()));
         user.setHeadUrl(MyConstant.QINIU_IMAGE_URL +"head.jpg");
         //发送邮件
-        taskExecutor.execute(new MailTask(activateCode,user.getUemail(),javaMailSender,1));
+        taskExecutor.execute(new MailTask(activateCode,user.getEmail(),javaMailSender,1));
         //向数据库插入记录
         userMapper.insertUser(user);
         return "ok";

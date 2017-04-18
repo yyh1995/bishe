@@ -14,76 +14,18 @@
     <title>基金网站</title>
 
     <!--CSS -->
-    <link href="../../common/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../common/swiper/css/swiper.min.css" rel="stylesheet">
+    <link href="../../common/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <style>body{padding-top: 60px;}</style>
+    <link href="../../common/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="../../common/bwizard/css/bwizard.min.css" rel="stylesheet" />
 
-    <script src="../../common/swiper/js/swiper.min.js"></script>
-    <style>
-        /*左侧菜单*/
-        .sidebar-menu{
-            border-right: 1px solid #c4c8cb;
-        }
-        /*一级菜单*/
-        .menu-first{
-            height:45px;
-            line-height:45px;
-            background-color: #e9e9e9;
-            border-top: 1px solid #efefef;
-            border-bottom: 1px solid #e1e1e1;
-            padding: 0;
-            font-size: 14px;
-            font-weight: normal;
-            text-align: center;
-        }
-        /*一级菜单鼠标划过状态*/
-        .menu-first:hover{
-            text-decoration: none;
-            background-color: #d6d4d5;
-            border-top: 1px solid #b7b7b7;
-            border-bottom: 1px solid #acacac;
-        }
-        /*二级菜单*/
-        .menu-second li a{
-            background-color: #f6f6f6;
-            height:31px;
-            line-height:31px;
-            border-top: 1px solid #efefef;
-            border-bottom: 1px solid #efefef;
-            font-size: 12px;
-            text-align:center;
-        }
-        /*二级菜单鼠标划过样式*/
-        .menu-second li a:hover {
-            text-decoration: none;
-            background-color: #66c3ec;
-            border-top: 1px solid #83ceed;
-            border-bottom: 1px solid #83ceed;
-            border-right: 3px solid #f8881c;
-            border-left: 3px solid #66c3ec;
-        }
-        /*二级菜单选中状态*/
-        .menu-second-selected {
-            background-color: #66c3ec;
-            height:31px;
-            line-height:31px;
-            border-top: 1px solid #83ceed;
-            border-bottom: 1px solid #83ceed;
-            border-right: 3px solid #f8881c;
-            border-left: 3px solid #66c3ec;
-            text-align:center;
-        }
-        /*覆盖bootstrap的样式*/
-        .nav-list,.nav-list li a{
-            padding: 0px;
-            margin: 0px;
-        }
-    </style>
+
 
 </head>
 
 <body>
 <!--导航条-->
-<nav class="navbar navbar-inverse ">
+<%--<nav class="navbar navbar-inverse ">
     <div class="container">
         <div class="navbar-header ">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -99,49 +41,192 @@
                 <a href="/main/user.do" class="btn btn-info active" style="font-size: 17px;font-weight:bold" role="button">个人主页</a>
             </form>
         </div>
-</nav>
+    </div>
+</nav>--%>
 
 </br>
 </br>
 </br>
 </br>
+
 <!--展示模块-->
-<div class="container">
+<div class="container" >
     <h2>旗下基金</h2>
-        <a id="gpx" href="#" class="btn btn-primary btn-lg">股票型基金</a>
-        <a id="zqx" href="#" class="btn btn-success btn-lg">债券型基金</a>
-        <a id="hhx" href="#" class="btn btn-info btn-lg">混合型基金</a>
-        <a id="zsx" href="#" class="btn btn-warning btn-lg">指数型基金</a>
-        <a id="hbx" href="#" class="btn btn-danger btn-lg">货币型基金</a>
-    <table style="width: 1200px;height:800px; " class="table table-striped table-hover table-bordered">
-        <thead>
-        <tr>
-            <th>基金名称</th>
-            <th>基金代码</th>
-            <th>净值日期</th>
-            <th>累计净值</th>
-            <th>日涨跌</th>
-            <th>今年收益</th>
-            <th>累计收益</th>
-            <th>网上直销</th>
-        </tr>
-        </thead>
+    <div id="wizard">
+        <ol>
+            <li>股票型基金</li>
+            <li>债券型基金</li>
+            <li>混合型基金</li>
+            <li>货币型基金</li>
+            <li>指数型基金</li>
+        </ol>
 
-        <tbody>
-        <c:forEach var="funds" items="${fundsList}">
-            <tr>
-                <td>${funds.fname}</td>
-                <td>${funds.fcode}</td>
-                <td>${funds.fnetdate}</td>
-                <td>${funds.fanet}</td>
-                <td>${funds.fdhl}</td>
-                <td>${funds.fyearnings}</td>
-                <td>${funds.faincome}</td>
-                <td><a class="btn btn-warning  btn-block" href="/main/buy.do">申购</a></td>
-            </tr>
-        </c:forEach>
-        </tbody>
-    </table>
+        <div class="container">
+            <h2>旗下基金</h2>
+            <table style="width: 1000px;height:600px; " class="table table-striped table-hover table-bordered">
+                <thead>
+                <tr>
+                    <th>基金名称</th>
+                    <th>基金代码</th>
+                    <th>净值日期</th>
+                    <th>累计净值</th>
+                    <th>日涨跌</th>
+                    <th>今年收益</th>
+                    <th>累计收益</th>
+                    <th>网上直销</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <c:forEach var="funds" items="${fundsList1}">
+                    <tr>
+                        <td>${funds.fname}</td>
+                        <td>${funds.fcode}</td>
+                        <td>${funds.fnetdate}</td>
+                        <td>${funds.fanet}</td>
+                        <td>${funds.fdhl}</td>
+                        <td>${funds.fyearnings}</td>
+                        <td>${funds.faincome}</td>
+                        <td><a class="btn btn-warning  btn-block" href="/main/buy.do">申购</a></td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container">
+            <h2>旗下基金</h2>
+            <table style="width: 1000px;height:600px; " class="table table-striped table-hover table-bordered">
+                <thead>
+                <tr>
+                    <th>基金名称</th>
+                    <th>基金代码</th>
+                    <th>净值日期</th>
+                    <th>累计净值</th>
+                    <th>日涨跌</th>
+                    <th>今年收益</th>
+                    <th>累计收益</th>
+                    <th>网上直销</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <c:forEach var="funds" items="${fundsList2}">
+                    <tr>
+                        <td>${funds.fname}</td>
+                        <td>${funds.fcode}</td>
+                        <td>${funds.fnetdate}</td>
+                        <td>${funds.fanet}</td>
+                        <td>${funds.fdhl}</td>
+                        <td>${funds.fyearnings}</td>
+                        <td>${funds.faincome}</td>
+                        <td><a class="btn btn-warning  btn-block" href="/main/buy.do">申购</a></td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container">
+            <h2>旗下基金</h2>
+            <table style="width: 1000px;height:600px; " class="table table-striped table-hover table-bordered">
+                <thead>
+                <tr>
+                    <th>基金名称</th>
+                    <th>基金代码</th>
+                    <th>净值日期</th>
+                    <th>累计净值</th>
+                    <th>日涨跌</th>
+                    <th>今年收益</th>
+                    <th>累计收益</th>
+                    <th>网上直销</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <c:forEach var="funds" items="${fundsList3}">
+                    <tr>
+                        <td>${funds.fname}</td>
+                        <td>${funds.fcode}</td>
+                        <td>${funds.fnetdate}</td>
+                        <td>${funds.fanet}</td>
+                        <td>${funds.fdhl}</td>
+                        <td>${funds.fyearnings}</td>
+                        <td>${funds.faincome}</td>
+                        <td><a class="btn btn-warning  btn-block" href="/main/buy.do">申购</a></td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container">
+            <h2>旗下基金</h2>
+            <table style="width: 1000px;height:600px; " class="table table-striped table-hover table-bordered">
+                <thead>
+                <tr>
+                    <th>基金名称</th>
+                    <th>基金代码</th>
+                    <th>净值日期</th>
+                    <th>累计净值</th>
+                    <th>日涨跌</th>
+                    <th>今年收益</th>
+                    <th>累计收益</th>
+                    <th>网上直销</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <c:forEach var="funds" items="${fundsList5}">
+                    <tr>
+                        <td>${funds.fname}</td>
+                        <td>${funds.fcode}</td>
+                        <td>${funds.fnetdate}</td>
+                        <td>${funds.fanet}</td>
+                        <td>${funds.fdhl}</td>
+                        <td>${funds.fyearnings}</td>
+                        <td>${funds.faincome}</td>
+                        <td><a class="btn btn-warning  btn-block" href="/main/buy.do">申购</a></td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container">
+            <h2>旗下基金</h2>
+            <table style="width: 1000px;height:600px; " class="table table-striped table-hover table-bordered">
+                <thead>
+                <tr>
+                    <th>基金名称</th>
+                    <th>基金代码</th>
+                    <th>净值日期</th>
+                    <th>累计净值</th>
+                    <th>日涨跌</th>
+                    <th>今年收益</th>
+                    <th>累计收益</th>
+                    <th>网上直销</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <c:forEach var="funds" items="${fundsList5}">
+                    <tr>
+                        <td>${funds.fname}</td>
+                        <td>${funds.fcode}</td>
+                        <td>${funds.fnetdate}</td>
+                        <td>${funds.fanet}</td>
+                        <td>${funds.fdhl}</td>
+                        <td>${funds.fyearnings}</td>
+                        <td>${funds.faincome}</td>
+                        <td><a class="btn btn-warning  btn-block" href="/main/buy.do">申购</a></td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
 </div>
 
 <!--横线-->
@@ -185,18 +270,11 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="../../common/jquery-3.2.0.min.js"></script>
+<script src="../../common/jquery.min.js"></script>
 <script src="../../common/bootstrap/js/bootstrap.min.js"></script>
-<!-- Initialize Swiper -->
-<script>
-    var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        paginationClickable: true,
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        spaceBetween: 30,
-        effect: 'fade'
-    });
+<script src="../../common/bwizard/js/bwizard.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $("#wizard").bwizard();
 </script>
 
 </body>

@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../../common/css/form-elements.css">
     <link rel="stylesheet" href="../../common/css/style.css">
 
-    <script type="text/javascript" src="../../common/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="../../common/jquery.min.js"></script>
     <script type="text/javascript" src="../../common/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../common/bootstrap/js/bootstrapValidator.js"></script>
 
@@ -44,7 +44,7 @@
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3 form-box">
 
-                    <form id="registration-form" role="form"  method="post" class="registration-form" action="/register.do">
+                    <form id="registration-form" action="/register.do" role="form"  method="post" class="registration-form" >
 
                         <fieldset>
                             <div class="form-top">
@@ -59,11 +59,11 @@
                             <div class="form-bottom">
                                 <div class="form-group">
                                     <label  for="name">用户名：</label>
-                                    <input type="text" name="name" value="${user.uname}" placeholder="用户名" class="name form-control" id="name">
+                                    <input type="text" name="name"  placeholder="用户名" class="name form-control" id="name">
                                 </div>
                                 <div class="form-group">
                                     <label  for="email">邮箱：</label>
-                                    <input type="email" name="email" value="${user.uemail}" placeholder="邮箱" class="email form-control" id="email">
+                                    <input type="email" name="email"  placeholder="邮箱" class="email form-control" id="email">
                                 </div>
                                 <div class="form-group">
                                     <label  for="yzm">验证码:</label>
@@ -109,7 +109,7 @@
                                 </div>
                             </div>
                             <div class="form-bottom">
-                                <a href="/main/user.do"><b>返回个人主页</b></a>
+                                <a href="/main/user.do"><b>恭喜你注册成功</b></a>
                             </div>
                         </fieldset>
                     </form>

@@ -61,33 +61,33 @@
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="15" parent="3" name="uname">
+      <column id="15" parent="3" name="name">
         <comment>用户姓名</comment>
         <mandatory>1</mandatory>
         <data-type>varchar(10)</data-type>
       </column>
-      <column id="16" parent="3" name="uaccout">
+      <column id="16" parent="3" name="accout">
         <comment>用户账户</comment>
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="17" parent="3" name="upassword">
+      <column id="17" parent="3" name="password">
         <comment>用户密码</comment>
         <mandatory>1</mandatory>
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="18" parent="3" name="uactived">
+      <column id="18" parent="3" name="actived">
         <data-type>int(11)</data-type>
       </column>
-      <column id="19" parent="3" name="uactive_code">
+      <column id="19" parent="3" name="active_code">
         <data-type>varchar(60)</data-type>
       </column>
-      <column id="20" parent="3" name="uemail">
+      <column id="20" parent="3" name="email">
         <data-type>varchar(20)</data-type>
       </column>
       <column id="21" parent="3" name="head_url">
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="22" parent="3" name="ujoin_time">
+      <column id="22" parent="3" name="join_time">
         <data-type>varchar(30)</data-type>
       </column>
       <key id="23" parent="3" name="PRIMARY">

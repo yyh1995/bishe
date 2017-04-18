@@ -2,33 +2,33 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yyh.dao.UserMapper">
     <select id="selectEmailCount" resultType="int">
-      select count(*) from user where uemail = #{uemail}
+      select count(*) from user where email = #{email}
     </select>
 
     <insert id="insertUser">
-      insert into user(uemail,upassword,uactived,uactive_code,ujoin_time,uname,head_url)
-      values(#{uemail},#{upassword},#{uactived},#{uactiveCode},#{ujoin_time},#{uname},#{headUrl})
+      insert into user(email,password,actived,active_code,join_time,name,head_url)
+      values(#{email},#{password},#{actived},#{activeCode},#{join_time},#{name},#{headUrl})
     </insert>
 
 
 
     <select id="selectActived" resultType="int">
-      select uactived from user where uemail=#{uemail}
+      select actived from user where email=#{email}
     </select>
 
     <select id="selectUserByUid" resultType="com.yyh.pojo.User">
-      select uid,username,description,position,school,job,head_url,follow_count,follower_count,like_count,post_count,scan_count
+      select id,name,description,position,school,job,head_url,follow_count,follower_count,like_count,post_count,scan_count
       from user
       where uid=#{uid}
     </select>
 
     <select id="selectIdByEmailAndPassword" resultType="int">
-      select id from user where uemail=#{uemail} and upassword=#{upassword}
+      select id from user where email=#{email} and password=#{password}
     </select>
 
     <select id="selectEditInfo" resultType="com.yyh.pojo.User">
-      select uid,username,description,position,school,job from user
-      where uid=#{uid}
+      select id,name,description,position,school,job from user
+      where id=#{id}
     </select>
 
     <update id="updateUser">

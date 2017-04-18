@@ -13,7 +13,17 @@ import java.util.List;
 @Service
 public interface FundsService {
 
-    List<Funds> getAllFunds();
+    List<Funds> getFunds_stock();
+
+    List<Funds> getFunds_bond();
+
+    List<Funds> getFunds_mix();
+
+    List<Funds> getFunds_currency();
+
+    List<Funds> getFunds_index();
+
+
 
 
 }
